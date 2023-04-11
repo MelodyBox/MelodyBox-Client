@@ -7,8 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "format": "prettier --write 'src/**/*.ts'",
-    "lint": "eslint . --ext .ts"
+    "format": "prettier --write 'src/**/*.{ts,tsx}'",
+    "lint": "eslint . --ext .ts,.tsx",
+    "fix": "eslint . --ext .ts,.tsx --fix"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -22,6 +23,7 @@
     "@vitejs/plugin-react": "^3.1.0",
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-react": "^7.32.2",
     "postcss-preset-env": "^8.3.1",
     "prettier": "^2.8.7",
     "typescript": "^5.0.4",
