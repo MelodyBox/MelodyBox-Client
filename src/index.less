@@ -17,32 +17,32 @@ body {
   -webkit-text-size-adjust: 100%;
 
   // Light Color Palette
-  --blush: #fdf4f5;
-  --kobi: #e8a0bf;
-  --violet: #ba90c6;
-  --beau-blue: #c0dbea;
+  @blush: #fdf4f5;
+  @kobi: #e8a0bf;
+  @violet: #ba90c6;
+  @beau-blue: #c0dbea;
 
   // Dark Color Palette
-  --independence: #504d6b;
-  --grape: #624f82;
-  --majestic-purple: #9f73ab;
-  --pastel-blue: #a3c7d6;
+  @independence: #504d6b;
+  @grape: #624f82;
+  @majestic-purple: #9f73ab;
+  @pastel-blue: #a3c7d6;
 
   @media (prefers-color-scheme: light) {
-    --background-color: var(--blush);
-    --primary-color: var(--violet);
-    --secondary-color: var(--beau-blue);
-    --extra-color: var(--kobi);
-    --text-color: var(--independence);
+    --background-color: @blush;
+    --primary-color: @violet;
+    --secondary-color: @beau-blue;
+    --extra-color: @kobi;
+    --text-color: @independence;
     --placeholder-color: #3e3e3e;
   }
 
   @media (prefers-color-scheme: dark) {
-    --background-color: var(--independence);
-    --primary-color: var(--majestic-purple);
-    --secondary-color: var(--pastel-blue);
-    --extra-color: var(--grape);
-    --text-color: var(--blush);
+    --background-color: @independence;
+    --primary-color: @majestic-purple;
+    --secondary-color: @pastel-blue;
+    --extra-color: @grape;
+    --text-color: @blush;
     --placeholder-color: #e0e0e0;
   }
 
