@@ -4,7 +4,7 @@ import { ReactComponent as SearchIcon } from "./search.svg";
 function SearchBar() {
   return (
     <form id={styles.searchbar}>
-      <input type="text" placeholder="Press 'S' to focus this searchbox..." />
+      <input type="text" placeholder="Press 'S' to focus this searchbox..." autoFocus={true} />
       <button type="submit">
         <SearchIcon />
       </button>
