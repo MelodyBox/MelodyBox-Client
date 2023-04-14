@@ -2,7 +2,9 @@
 @import "assets/skeleton.min.css";
 
 html,
-body {
+body,
+#root,
+.App {
   margin: 0;
   width: 100%;
   height: 100%;
@@ -62,4 +64,9 @@ body {
 body {
   color: @blush;
   background-color: @shark;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
 }

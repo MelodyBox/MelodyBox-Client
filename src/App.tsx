@@ -1,4 +1,5 @@
 import Header from "./components/Header/Header";
+import Main from "./components/Main/Main";
 import { useTernaryDarkMode } from "usehooks-ts";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
   return (
     <div className="App" data-theme={isDarkMode ? "dark" : "light"}>
       <Header />
+      <Main />
     </div>
   );
 }
