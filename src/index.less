@@ -19,42 +19,47 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  // Light Color Palette
-  @blush: #fdf4f5;
-  @kobi: #e8a0bf;
-  @violet: #ba90c6;
-  @beau-blue: #c0dbea;
-
-  // Dark Color Palette
-  @independence: #504d6b;
-  @grape: #624f82;
-  @majestic-purple: #9f73ab;
-  @pastel-blue: #a3c7d6;
-
-  @media (prefers-color-scheme: light) {
-    --background-color: @blush;
-    --primary-color: @violet;
-    --secondary-color: @beau-blue;
-    --darker-secondary-color: darken(@beau-blue, 10%);
-    --extra-color: @kobi;
-    --text-color: @independence;
-    --placeholder-color: #3e3e3e;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    --background-color: @independence;
-    --primary-color: @majestic-purple;
-    --secondary-color: @pastel-blue;
-    --darker-secondary-color: darken(@pastel-blue, 10%);
-    --extra-color: @grape;
-    --text-color: @blush;
-    --placeholder-color: #e0e0e0;
-  }
-
   color-scheme: light dark;
 }
 
+// Light Color Palette
+@blush: #fdf4f5;
+@kobi: #e8a0bf;
+@violet: #ba90c6;
+@beau-blue: #c0dbea;
+
+// Dark Color Palette
+@shark: #232327;
+@grape: #624f82;
+@majestic-purple: #9f73ab;
+@pastel-blue: #a3c7d6;
+
+// Default is light theme
+.App {
+  --background-color: @blush;
+  --primary-color: @violet;
+  --secondary-color: @beau-blue;
+  --darker-secondary-color: darken(@beau-blue, 10%);
+  --extra-color: @kobi;
+  --text-color: @shark;
+  --placeholder-color: #3e3e3e;
+  --highlighter: @kobi;
+  --inverted-text: @blush;
+}
+
+.App[data-theme="dark"] {
+  --background-color: @shark;
+  --primary-color: @majestic-purple;
+  --secondary-color: @pastel-blue;
+  --darker-secondary-color: darken(@pastel-blue, 10%);
+  --extra-color: @grape;
+  --text-color: @blush;
+  --placeholder-color: #e0e0e0;
+  --highlighter: @blush;
+  --inverted-text: @shark;
+}
+
 body {
-  color: var(--text-color);
-  background-color: var(--background-color);
+  color: @blush;
+  background-color: @shark;
 }
