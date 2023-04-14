@@ -1,5 +1,5 @@
 import styles from "./Header.module.less";
-import { ReactComponent as SearchIcon } from "./search.svg";
+import { ReactComponent as SearchIcon } from "./icons/search.svg";
 
 function SearchBar() {
   return (

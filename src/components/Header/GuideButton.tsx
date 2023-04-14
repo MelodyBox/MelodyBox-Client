@@ -1,5 +1,5 @@
 import styles from "./Header.module.less";
-import { ReactComponent as InfoIcon } from "./info.svg";
+import { ReactComponent as InfoIcon } from "./icons/info.svg";
 
 function GuideButton() {
   return (
