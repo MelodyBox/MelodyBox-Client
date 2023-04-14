@@ -4,7 +4,7 @@ import styles from "./Header.module.less";
 
 function Header() {
   return (
-    <div className={styles.header}>
+    <div id={styles.header}>
       <GuideButton />
       <SearchBar />
     </div>
