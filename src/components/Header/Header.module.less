@@ -6,14 +6,16 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 10px;
   box-sizing: border-box;
+  --flex-item-height: 38px;
 }
 
 #searchbar {
   margin: 0 auto;
   width: 45%;
   max-width: 600px;
-  height: 38px;
+  height: var(--flex-item-height);
   position: relative;
   --border-radius: 50px;
   --search-size: 42px;
@@ -70,6 +72,8 @@
 #guide {
   @size: 18px;
 
+  height: var(--flex-item-height);
+
   margin: 0;
   padding: 0;
   display: flex;
@@ -93,5 +97,31 @@
 
   &:hover {
     --color: #624f82; // grape same as dark theme
+  }
+}
+
+.iconbar {
+  height: var(--flex-item-height);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  @size: 24px;
+  @color: #000;
+  cursor: pointer;
+
+  &::before {
+    content: attr(data-text);
+    text-decoration: none;
+    margin-block-start: 3px;
+    margin-inline-end: 5px;
+    line-height: @size;
+    color: @color;
+  }
+
+  & > .icon {
+    width: @size;
+    height: @size;
+    fill: @color;
   }
 }
