@@ -72,3 +72,14 @@ export type LyricsResult = {
 // ================[ Download Types ]================
 export type DownloadQuery = LyricsQuery;
 // ==================================================
+
+const SERVER: string = import.meta.env.VITE_SERVER;
+
+export async function searchSong(options: SearchQuery) {
+  const url = new URL("/search", SERVER);
+  const params = new URLSearchParams(options);
+  url.search = params.toString();
+  const response = await fetch(url.href);
+  const data: ApiResponse<SearchResult> = await response.json();
+  return data;
+}
