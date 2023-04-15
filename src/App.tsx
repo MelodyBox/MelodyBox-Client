@@ -2,6 +2,7 @@ import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import headerStyles from "./components/Header/Header.module.less";
 import { useTernaryDarkMode } from "usehooks-ts";
+import ContentProvider from "./components/ContentState";
 
 function App() {
   const { isDarkMode } = useTernaryDarkMode();
@@ -23,8 +24,10 @@ function App() {
 
   return (
     <div className="App" data-theme={isDarkMode ? "dark" : "light"} onClick={handleClick}>
-      <Header />
-      <Main />
+      <ContentProvider>
+        <Header />
+        <Main />
+      </ContentProvider>
     </div>
   );
 }
