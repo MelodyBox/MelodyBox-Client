@@ -4,3 +4,20 @@
   background-color: var(--background-color);
   transition: all 250ms linear;
 }
+
+#main.empty {
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  user-select: none;
+
+  & > .empty__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    & span {
+      margin: 0;
+    }
+  }
+}
