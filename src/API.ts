@@ -17,23 +17,17 @@ export type SearchQuery = {
   q: string;
   filter?: "songs" | "videos" | "artists";
 };
-type SongItem = {
+export type SongItem = {
   videoId: string;
   title: string;
   duration: string;
   artists: (string | undefined)[];
   thumbnail: string;
-  browseId?: undefined;
-  artist?: undefined;
 };
-type ArtistItem = {
+export type ArtistItem = {
   browseId: string;
   artist: string;
   thumbnail: string;
-  videoId?: undefined;
-  title?: undefined;
-  duration?: undefined;
-  artists?: undefined;
 };
 export type SearchResult = (SongItem | ArtistItem)[];
 // ==================================================
