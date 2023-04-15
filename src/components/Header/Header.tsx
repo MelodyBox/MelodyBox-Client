@@ -17,6 +17,7 @@ function ThemeSwitcher() {
           {["system", "light", "dark"].map((mode) => (
             <li
               key={mode}
+              className={styles.dropdown__item}
               id={mode === ternaryDarkMode ? styles.selectedTheme : undefined}
               onClick={(ev) => setTernaryDarkMode((ev.target as HTMLLIElement).textContent as TernaryDarkMode)}
             >
