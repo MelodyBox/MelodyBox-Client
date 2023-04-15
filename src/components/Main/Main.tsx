@@ -5,10 +5,10 @@ import { useContext } from "react";
 import Loader from "./Loader";
 
 function Main() {
-  const { content } = useContext(ContentContext);
+  const { content, LoaderText } = useContext(ContentContext);
   const contentMap: Record<ContentState, JSX.Element> = {
     empty: <EmptyPage />,
-    loading: <Loader />,
+    loading: <Loader text={LoaderText.current} />,
   };
   return (
     <main id={styles.main} className={styles[content]}>

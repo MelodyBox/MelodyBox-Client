@@ -6,17 +6,23 @@ import { ContentContext } from "../ContentState";
 
 function SearchBar() {
   const searchInput = useRef<HTMLInputElement>(null);
-  const { setContent } = useContext(ContentContext);
+  const { setContent, LoaderText } = useContext(ContentContext);
 
   async function handleSubmit(event: React.SyntheticEvent) {
     event.preventDefault();
-    if (searchInput.current !== null) {
-      setContent("loading");
-      const result = await searchSong({
-        q: searchInput.current.value,
-      });
-      console.log(result);
+    if (searchInput.current === null) return;
+    LoaderText.current = "Searching for Songs...";
+    setContent("loading");
+    const result = await searchSong({
+      q: searchInput.current.value,
+    });
+    if (!result.success) {
+      LoaderText.current = undefined;
+      setContent("empty");
+      alert(result.error);
+      return;
     }
+    console.log(result.data);
   }
 
   return (
