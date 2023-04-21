@@ -6,7 +6,7 @@ import { ContentContext } from "../ContentState";
 
 function SearchBar() {
   const searchInput = useRef<HTMLInputElement>(null);
-  const { setContent, LoaderText, setSearchResult } = useContext(ContentContext);
+  const { setContent, LoaderText } = useContext(ContentContext);
 
   async function handleSubmit(event: React.SyntheticEvent) {
     event.preventDefault();
@@ -22,9 +22,6 @@ function SearchBar() {
       alert(result.error);
       return;
     }
-    LoaderText.current = undefined;
-    setSearchResult(result.data);
-    setContent("results");
     console.log(result.data);
   }
 
